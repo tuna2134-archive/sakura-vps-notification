@@ -26,6 +26,8 @@ while True:
         }
         if last["type"] == "trouble":
             embed["color"] = 0xff0000
+        elif last["type"] == "maint":
+            embed["color"] = 0x00e5ff
         webhook.send_message(embeds=[embed], username=last["type"])
         config["last"] = last["url"]
         with open("config.yml", "w") as f:
